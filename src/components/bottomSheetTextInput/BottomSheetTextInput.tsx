@@ -6,7 +6,7 @@ import type { BottomSheetTextInputProps } from './types';
 const BottomSheetTextInputComponent = forwardRef<
   TextInput,
   BottomSheetTextInputProps
->(({ onFocus, onBlur, hitSlop, ...rest }, ref) => {
+>(({ onFocus, onBlur, ...rest }, ref) => {
   //#region hooks
   const { shouldHandleKeyboardEvents } = useBottomSheetInternal();
 
@@ -44,7 +44,6 @@ const BottomSheetTextInputComponent = forwardRef<
       ref={ref}
       onFocus={handleOnFocus}
       onBlur={handleOnBlur}
-      hitSlop={hitSlop === null ? undefined : hitSlop}
       {...rest}
     />
   );
