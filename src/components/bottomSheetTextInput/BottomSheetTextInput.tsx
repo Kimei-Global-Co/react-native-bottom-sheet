@@ -45,7 +45,7 @@ const BottomSheetTextInputComponent = forwardRef<
       ref={ref}
       onFocus={handleOnFocus}
       onBlur={handleOnBlur}
-      hitSlop={hitSlop === null ? undefined : (hitSlop as Insets | undefined)}
+      hitSlop={hitSlop as Insets | undefined}
       {...rest}
     />
   );
