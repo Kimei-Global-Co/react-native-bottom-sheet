@@ -4,11 +4,7 @@
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "src/index.ts",
   "source": "src/index.ts",
-  "files": [
-    "src",
-    "lib",
-    "mock.js"
-  ],
+  "files": ["src", "lib", "mock.js"],
   "keywords": [
     "react-native",
     "ios",
@@ -27,7 +23,7 @@
   "homepage": "https://ui.gorhom.dev/components/bottom-sheet",
   "scripts": {
     "typescript": "tsc --skipLibCheck --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "biome lint --error-on-warnings ./src",
     "build": "bob build && yarn copy-dts && yarn delete-dts.js && yarn delete-debug-view",
     "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
     "delete-debug-view": "rm -r ./lib/commonjs/components/bottomSheetDebugView && rm -r ./lib/module/components/bottomSheetDebugView && rm -r ./lib/typescript/components/bottomSheetDebugView",
@@ -41,20 +37,20 @@
     "invariant": "^2.2.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@react-native-community/eslint-config": "^3.0.0",
     "@release-it/conventional-changelog": "^8.0.1",
     "@types/invariant": "^2.2.34",
     "@types/react": "17.0.2",
     "@types/react-native": "^0.67.7",
     "auto-changelog": "^2.4.0",
     "copyfiles": "^2.4.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
+    "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "^2.3.2",
     "react": "~16.9.0",
     "react-native": "^0.74.1",
@@ -67,7 +63,6 @@
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-native": "*",
-    "@shopify/flash-list": "*",
     "react": "*",
     "react-native": "*",
     "react-native-gesture-handler": ">=1.10.1",
@@ -84,10 +79,6 @@
   "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      "typescript"
-    ]
+    "targets": ["commonjs", "module", "typescript"]
   }
 }
